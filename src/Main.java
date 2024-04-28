@@ -132,10 +132,25 @@ public class Main {
             (" ~----( ~   Y.  )
             It looks like we will soon have more rabbits!""";
         String[] animalsList = new String[] {camel, lion, deer, goose, bat, rabbit};
-        int animalCamera = input.nextInt();
-        System.out.println("Please enter the number of the habitat you would like to view");
-        System.out.println(animalsList[animalCamera]);
-        System.out.println("---\nYou've reached the end of the program. To check another habitat, please restart the watcher.");
+        System.out.println("Please enter the number of the habitat you would like to view: 1 - 6.");           
+        System.out.println("Or write any 'letter' or write any 'word' to exit viewing animals!!");
+        
+        int animalCamera;
+        while (input.hasNextInt()) {
+            animalCamera = input.nextInt() - 1;
+            if (animalCamera < 7 && animalCamera >= 0) {
+                System.out.println(animalsList[animalCamera]);
+            } else {
+                System.out.println("We only have 6 cameras!");
+            }
+            System.out.println("Please enter the number of the habitat you would like to view");                        
+        }
+
+        System.out.println("See you later!");
+        
+        
+
+        
 
     }
 }
